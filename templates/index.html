@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-yellow-100 to-pink-200 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <h1 class="text-3xl font-bold text-center mb-6 text-pink-600"> Simple Calculator </h1>
+    <form method="POST" class="space-y-4">
+      <input type="number" name="num1" placeholder="First Number" step="any"
+             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-300" required>
+
+      <input type="number" name="num2" placeholder="Second Number" step="any"
+             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-300" required>
+
+      <select name="operation"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300">
+        <option value="add">➕ Add</option>
+        <option value="subtract">➖ Subtract</option>
+        <option value="multiply">✖️ Multiply</option>
+        <option value="divide">➗ Divide</option>
+      </select>
+
+      <button type="submit"
+              class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+        Calculate
+      </button>
+    </form>
+
+    {% if result is not none %}
+      <div class="mt-6 text-green-700 text-xl font-bold text-center">
+        ✅ Result: {{ result }}
+      </div>
+    {% endif %}
+
+    {% if error %}
+      <div class="mt-6 text-red-600 text-center font-medium">
+        ❌ {{ error }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

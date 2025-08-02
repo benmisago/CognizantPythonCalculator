@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Result</title>
+</head>
+<body>
+  <h1>{{ operation }} Result</h1>
+  <p>{{ num1 }} {{ operation == "Addition" and "+" or operation == "Subtraction" and "-" or operation == "Multiplication" and "×" or "÷" }} {{ num2 }} = {{ result }}</p>
+  <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>
