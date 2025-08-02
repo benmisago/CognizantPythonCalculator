@@ -1,9 +1,6 @@
 services:
   - type: web
-    name: calculator-app
-    runtime: python
-    buildCommand: ""
-    startCommand: "python app.py"
-    envVars:
-      - key: FLASK_ENV
-        value: production
+    name: cognizant-calculator
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn CognizantPythonCalculator.app:app
